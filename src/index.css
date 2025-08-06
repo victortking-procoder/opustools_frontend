@@ -1,0 +1,88 @@
+/* frontend/src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+/* Example: Montserrat for headings, Open Sans for body */
+
+:root {
+  --primary-blue: #3498db;
+  --primary-green: #2ecc71;
+  --dark-text: #2c3e50;
+  --light-text: #ecf0f1;
+  --light-bg: #f5f7fa; /* A softer light background */
+  --card-bg: #ffffff;
+  --border-color: #e0e6ed;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08); /* Lighter, diffused shadow */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Body font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Heading font */
+  color: var(--dark-text);
+  margin-top: 0.8em;
+  margin-bottom: 0.6em;
+}
+
+/* Basic Link Styling */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #217dbb; /* Darker blue */
+}
+
+/* General Button Styling (will be overridden by specific ones) */
+button, .button {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px; /* Slightly larger radius */
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover, .button:hover {
+  background-color: #217dbb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active, .button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="number"], select, textarea {
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1em;
+  color: var(--dark-text);
+  background-color: var(--card-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}

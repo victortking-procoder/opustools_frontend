@@ -1,0 +1,104 @@
+/* src/pages/AccountPage.css */
+
+.account-page-container {
+    /* Central container for the account page content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 40px auto; /* Add margin for spacing from top/bottom */
+    background-color: #ffffff; /* A clean white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-page-container h2 {
+    color: #333; /* Darker text for headings */
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.account-form {
+    width: 100%;
+    max-width: 500px; /* Limit form width for better readability */
+    margin-bottom: 30px;
+}
+
+.account-form .form-group {
+    margin-bottom: 20px;
+}
+
+.account-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.account-form input[type="text"],
+.account-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.account-form input:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.account-form .disabled-input {
+    background-color: #e9ecef; /* Lighter background for disabled input */
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.account-page-container .button {
+    width: auto; /* Adjust button width */
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+.account-actions {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Light border to separate sections */
+    text-align: center;
+}
+
+.account-actions h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.account-actions p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.account-actions .button.secondary {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 1px solid #007bff;
+    text-decoration: none; /* Make the link look like a button */
+    display: inline-block;
+}
+
+.account-actions .button.secondary:hover {
+    background-color: #e2e6ea;
+    color: #0056b3;
+}

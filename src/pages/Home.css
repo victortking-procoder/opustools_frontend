@@ -1,0 +1,252 @@
+/* frontend/src/pages/Home.css */
+
+.home-page {
+  padding: 30px 20px; /* More padding */
+  text-align: center;
+  max-width: 1280px; /* Slightly wider overall container */
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.home-hero {
+  background: linear-gradient(135deg, #e6f2f9, #d0e7f7); /* Subtle gradient */
+  padding: 80px 30px; /* More generous padding */
+  border-radius: 15px; /* More rounded */
+  margin-bottom: 60px; /* More space */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+}
+
+.home-hero h1 {
+  font-size: 3.5em; /* Larger heading */
+  color: var(--dark-text);
+  margin-bottom: 20px; /* More space */
+  line-height: 1.2;
+}
+
+.home-hero .tagline {
+  font-size: 1.5em; /* Larger tagline */
+  color: #555;
+  max-width: 900px; /* Wider tagline */
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* More space between buttons */
+  flex-wrap: wrap;
+}
+
+.hero-button {
+  background-color: var(--primary-blue); /* Use global variable */
+  color: white;
+  padding: 18px 35px; /* Larger buttons */
+  border: none; /* Ensure no border */
+  border-radius: 10px; /* More rounded */
+  font-size: 1.3em; /* Larger font */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  text-decoration: none; /* Ensure no underline */
+  display: inline-flex; /* For better text centering if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button.primary {
+  background-color: var(--primary-green); /* Green for primary CTA */
+}
+
+.hero-button.primary:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* More pronounced hover effect */
+}
+
+.hero-button:hover {
+  background-color: #217dbb;
+  transform: translateY(-3px);
+}
+
+/* Tools Showcase Section */
+.tools-showcase {
+  margin-bottom: 60px; /* More space */
+}
+
+.tools-showcase h2 {
+  font-size: 2.8em; /* Larger heading */
+  color: var(--dark-text); /* Use dark text for headings */
+  margin-bottom: 40px; /* More space */
+}
+
+.tool-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger cards */
+  gap: 35px; /* More space */
+  justify-content: center;
+}
+
+.tool-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 15px; /* More rounded */
+  padding: 35px; /* More padding */
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
+}
+
+.tool-card:hover {
+  transform: translateY(-8px); /* More pronounced hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.tool-card h3 {
+  color: var(--primary-blue); /* Tool specific color */
+  font-size: 2em; /* Larger tool title */
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.tool-card p {
+  color: #666;
+  font-size: 1.05em; /* Slightly larger text */
+  line-height: 1.6;
+}
+
+/* Tool Card Button - FIX: Ensure text is always visible and consistent style */
+.tool-card-button {
+  display: inline-block; /* Ensure it behaves like a block for padding/margin */
+  background-color: var(--primary-blue);
+  color: white; /* Make sure the text color is explicitly white */
+  padding: 12px 25px;
+  border: none; /* Ensure no border */
+  border-radius: 8px;
+  text-decoration: none; /* Remove underline */
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card-button:hover {
+  background-color: #217dbb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tool Icons (placeholders, replace with actual SVGs/images later) */
+.tool-icon {
+  width: 80px; /* Larger icons */
+  height: 80px;
+  margin: 0 auto 20px auto;
+  background-color: #f0f0f0; /* Default icon background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em; /* Larger text icon placeholder */
+  color: #888;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle icon shadow */
+}
+/* Specific icon colors */
+.image-icon { background-color: #e0f7fa; color: #3498db; }
+.pdf-icon { background-color: #fce7e7; color: #e74c3c; }
+.audio-icon { background-color: #e7f7e7; color: #2ecc71; }
+.video-icon { background-color: #f7e7fa; color: #9b59b6; }
+
+
+/* Coming Soon Badge - Adjust styling */
+.tool-card.coming-soon {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.tool-card.coming-soon:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.tool-card.coming-soon .tool-card-button {
+  background-color: #cccccc; /* Greyed out button */
+  pointer-events: none; /* Disable clicks */
+}
+
+.tool-status {
+  background-color: #ffda6a; /* Softer yellow */
+  color: #7d5900;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  display: inline-block; /* Ensure padding applies */
+}
+
+
+/* Benefits Section */
+.benefits-section {
+  margin-top: 60px;
+  padding: 50px 20px; /* More padding */
+  background: linear-gradient(45deg, #f0f8ff, #e0f2f7); /* Subtle gradient */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.benefits-section h2 {
+  font-size: 2.8em;
+  color: var(--dark-text);
+  margin-bottom: 40px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* More space */
+}
+
+.benefit-item {
+  background-color: var(--card-bg);
+  padding: 30px; /* More padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-item h3 {
+  color: var(--primary-blue);
+  font-size: 1.8em;
+  margin-bottom: 12px;
+}
+
+.benefit-item p {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .home-hero h1 {
+    font-size: 2.5em;
+  }
+  .home-hero .tagline {
+    font-size: 1.2em;
+  }
+  .tools-showcase h2, .benefits-section h2 {
+    font-size: 2em;
+  }
+  .tool-card, .benefit-item {
+    padding: 25px;
+  }
+  .hero-button {
+    padding: 15px 25px;
+    font-size: 1.1em;
+  }
+}

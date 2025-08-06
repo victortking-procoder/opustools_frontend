@@ -1,0 +1,167 @@
+/* frontend/src/components/NavBar.css */
+
+/* General Navbar Styles (for all screen sizes) */
+.navbar {
+    background-color: var(--dark-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    color: var(--light-text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--primary-blue);
+}
+
+/* Default styles for the nav menu (desktop first) */
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav li {
+    margin-left: 25px;
+}
+
+/* Default state: hide the hamburger menu */
+.hamburger-menu {
+    display: none;
+}
+
+/* Nav link and button styles */
+.nav-link {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+.nav-username {
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.nav-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button:hover {
+    background-color: #217dbb;
+    transform: translateY(-1px);
+}
+
+.nav-button.primary {
+    background-color: var(--primary-green);
+}
+
+.nav-button.primary:hover {
+    background-color: #24b060;
+}
+
+
+/* Responsive styles for screens smaller than 769px */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: row; /* Ensure brand and hamburger are on one line */
+        justify-content: space-between;
+    }
+
+    /* Show the hamburger menu on mobile */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .hamburger-menu:focus {
+        outline: none;
+    }
+
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--light-text); /* Ensure the bars are visible */
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hide the full nav menu on mobile by default */
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 65px; /* Adjust this to match your navbar height */
+        left: 0;
+        background-color: var(--dark-text);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transform: translateY(-100%);
+    }
+
+    /* Show the menu when the 'open' class is applied */
+    .navbar-nav.open {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .navbar-nav li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link,
+    .nav-button,
+    .nav-username {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding doesn't push elements out */
+    }
+}

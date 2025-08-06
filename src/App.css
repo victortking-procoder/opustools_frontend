@@ -1,0 +1,307 @@
+/* frontend/src/App.css */
+
+/* Global Variables (confirm these are only in index.css for single source of truth) */
+/*
+:root {
+  --primary-blue: #3498db;
+  --primary-green: #2ecc71;
+  --dark-text: #2c3e50;
+  --light-text: #ecf0f1;
+  --light-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --border-color: #e0e6ed;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+*/
+
+/* Basic App Layout - now applied by Layout.tsx */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-text); /* Use global variable */
+}
+
+/* App-header is now handled by NavBar/Layout, keep only if it's a large, static title below nav */
+/* .App-header {
+  background-color: var(--dark-text);
+  padding: 25px 20px;
+  color: var(--light-text);
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* .App-header h1 {
+  font-size: 2.2em;
+  margin: 0;
+  color: var(--light-text);
+  font-weight: 600;
+} */
+
+/* This now wraps the <Outlet /> in Layout.tsx */
+.App-content-wrapper { /* Renamed for clarity, used by Layout.tsx */
+  flex-grow: 1;
+  /* RESPONSIVENESS: Use responsive padding here too */
+  padding: 30px clamp(15px, 4vw, 20px); /* Adjust horizontal padding */
+  max-width: 960px; /* Consistent max width */
+  margin: 0 auto;
+  width: 100%; /* Occupy full available width */
+  box-sizing: border-box; /* Include padding in element's total width */
+  overflow-x: hidden; /* Prevent horizontal scroll for the main content area */
+}
+
+
+/* NEW style for the main heading on individual tool pages (e.g., ImageToolPage) */
+.main-tool-heading {
+  font-size: 2.5em; /* Adjust size as needed for prominence */
+  color: var(--dark-text);
+  text-align: center;
+  margin-bottom: 40px; /* Space it out nicely */
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Very subtle text shadow */
+}
+
+.section-container {
+  background-color: var(--card-bg); /* Use global variable */
+  border: 1px solid var(--border-color); /* Use global variable */
+  border-radius: 12px; /* More rounded */
+  padding: 30px; /* More padding */
+  margin-bottom: 30px; /* More space */
+  box-shadow: var(--shadow-light); /* Use global variable */
+  text-align: left;
+}
+
+/* IMPORTANT: Change the h2 rule to h3 here for sub-sections */
+.section-container h3 {
+  color: var(--primary-blue); /* Use global variable */
+  margin-top: 0;
+  margin-bottom: 20px; /* More space */
+  text-align: center;
+  font-size: 1.8em; /* Adjusted size to be an H3 under the new H2 */
+  font-weight: 700;
+}
+
+/* REFINED & RESPONSIVE: Styling for the introductory text on ImageToolPage */
+.introduction-text {
+  background-color: #eaf3f7;
+  border: none;
+  /* Make padding responsive but ensure it doesn't cause overflow */
+  padding: 25px clamp(15px, 5vw, 40px); /* Tweak clamp values for better responsiveness */
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center; /* Center the block itself */
+  max-width: 960px; /* Keep consistent with App-main-content for desktop */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Important: Occupy full width within its container up to max-width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  overflow-x: hidden; /* Prevent horizontal scroll due to inner elements */
+}
+
+.introduction-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1.5em;
+  /* Ensure paragraph text itself is responsive without causing overflow */
+  padding: 0 5px; /* Small inner padding to prevent text from touching edges on very small screens */
+}
+
+.introduction-text strong {
+  color: var(--dark-text);
+}
+
+.introduction-text ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 25px; /* More space above the list */
+  margin-bottom: 0; /* No margin below the list, as section-container handles it */
+  display: grid;
+  grid-template-columns: 1fr; /* Default to 1 column on all screens */
+  gap: 15px; /* Space between list items */
+}
+
+/* Only apply 2 columns on larger screens */
+@media (min-width: 768px) {
+  .introduction-text ul {
+    grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    gap: 20px; /* Slightly more gap in two-column layout */
+  }
+}
+
+.introduction-text ul li {
+  font-size: 1em;
+  color: #66758c;
+  display: flex; /* Use flexbox for icon and text alignment */
+  align-items: flex-start; /* Align text from the top */
+  text-align: left; /* Align text left within the list item */
+  padding: 10px 15px; /* Padding inside each list item for better spacing */
+  background-color: #ffffff; /* White background for each list item for better separation */
+  border-radius: 8px; /* Slightly rounded corners for list items */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+  line-height: 1.5; /* Improve readability */
+  word-wrap: break-word; /* Ensure long words break */
+  overflow-wrap: break-word; /* Modern equivalent */
+}
+
+.introduction-text ul li::before {
+  content: '✔';
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-right: 10px; /* Space between checkmark and text */
+  flex-shrink: 0; /* Prevent checkmark from shrinking */
+  font-size: 1.2em; /* Slightly larger checkmark */
+  position: relative;
+  top: 2px; /* Adjust vertical alignment of checkmark */
+  display: inline-block; /* Treat as an inline block */
+  line-height: 1; /* Normalize line height for the checkmark itself */
+}
+
+/* Job Status Area Styling */
+.job-status-area {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #e6f7ff; /* Lighter background for status */
+  border: 1px solid #cceeff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.job-status-area p {
+  margin: 10px 0;
+  font-size: 1.05em;
+}
+
+.job-status-area strong {
+  color: #0056b3;
+}
+
+.success-message {
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Preview Image */
+.converted-image-preview {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 25px auto 0 auto;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Slightly stronger shadow */
+  border-radius: 8px;
+}
+
+/* Download Button Styling */
+.download-link {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 12px 25px; /* Consistent with general buttons */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-link:hover {
+  background-color: #217dbb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* App-footer is now handled by Layout.tsx */
+.App-footer {
+  margin-top: 40px; /* More space */
+  padding: 20px;
+  background-color: var(--dark-text); /* Darker footer */
+  color: var(--light-text);
+  font-size: 0.95em;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  /* No need for explicit padding-left/right here if clamp is used above */
+  /* These can be used if you want strict minimums overriding clamp for very small screens */
+  /* .App-main-content,
+  .section-container,
+  .introduction-text {
+    padding-left: 15px;
+    padding-right: 15px;
+  } */
+
+  .main-tool-heading {
+    font-size: 2em; /* Smaller heading for mobile */
+  }
+
+  .section-container h3 {
+    font-size: 1.5em; /* Smaller sub-heading for mobile */
+  }
+}
+
+/* Add a specific media query for very small screens if necessary to reduce font size */
+@media (max-width: 480px) {
+  .introduction-text p {
+    font-size: 1em; /* Slightly smaller text for very small phones */
+  }
+  .introduction-text ul li {
+    font-size: 0.9em; /* Make list item text even smaller on very small screens */
+    padding: 8px 10px; /* Reduce padding slightly */
+  }
+}
+
+/* Add this to your App.css or a new ImageToolPage.css */
+
+.signup-prompt {
+  background-color: #ffe0b2; /* Light orange background */
+  border: 1px solid #ff9800; /* Orange border */
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 25px; /* Space above the prompt */
+  text-align: center;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.signup-prompt p {
+  margin-bottom: 10px;
+}
+
+.signup-prompt a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+/*
+The following .error-message styling was commented out in your original App.css
+because it was noted as "Already defined above, remove duplication".
+If you truly had a 'colon expected' error here, ensure there are no hidden characters.
+*/
+/*
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-top: 10px;
+}
+*/

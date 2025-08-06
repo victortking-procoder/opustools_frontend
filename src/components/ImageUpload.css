@@ -1,0 +1,163 @@
+/* frontend/src/components/ImageUpload.css */
+
+.image-upload-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto; /* Center the upload component */
+}
+
+/* Drag and Drop Area */
+.drag-drop-area {
+  border: 2px dashed #a0aec0; /* A dashed border */
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: #f7fafc; /* Light background */
+  color: #4a5568;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; /* Ensure a decent height */
+}
+
+.drag-drop-area:hover,
+.drag-drop-area.drag-active {
+  border-color: #4299e1; /* Blue border on hover/active */
+  background-color: #ebf8ff; /* Lighter blue background */
+  color: #2b6cb0;
+  box-shadow: 0 0 15px rgba(66, 153, 225, 0.2);
+}
+
+.drag-drop-area p {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.drag-drop-area .or-text {
+  font-size: 0.9em;
+  color: #718096;
+  margin: 10px 0;
+}
+
+.drag-drop-area .browse-button {
+  background-color: #4299e1; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 15px;
+}
+
+.drag-drop-area .browse-button:hover {
+  background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.drag-drop-area .supported-formats {
+  font-size: 0.8em;
+  color: #718096;
+  margin-top: 20px;
+}
+
+/* Hide the actual file input */
+.file-input-hidden {
+  display: none;
+}
+
+/* File Preview Card */
+.file-preview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.preview-thumbnail-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edf2f7;
+  border: 1px solid #cbd5e0;
+}
+
+.preview-thumbnail {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain; /* Ensure image scales within bounds */
+}
+
+.file-details {
+  text-align: center;
+  font-size: 1em;
+  color: #2d3748;
+}
+
+.file-details .file-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  word-break: break-all; /* Break long filenames */
+}
+
+.file-details .file-size {
+  color: #718096;
+  font-size: 0.9em;
+  margin-top: 0;
+}
+
+.remove-file-button {
+  background-color: #ef4444; /* Red button */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 15px;
+}
+
+.remove-file-button:hover {
+  background-color: #dc2626; /* Darker red on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .drag-drop-area {
+    padding: 30px 15px;
+    min-height: 180px;
+  }
+  .preview-thumbnail-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+  .file-preview-card {
+    padding: 20px;
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.file-limit-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}

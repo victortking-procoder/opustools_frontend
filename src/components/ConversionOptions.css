@@ -1,0 +1,268 @@
+/* frontend/src/components/ConversionOptions.css */
+
+.conversion-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between .option-group elements */
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff; /* Added from my previous snippet for consistency */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added from my previous snippet for consistency */
+    margin-bottom: 20px; /* Added from my previous snippet for spacing below the component */
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    /* Removed margin-bottom here as gap on container handles spacing */
+}
+
+.option-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2d3748; /* Your original color */
+}
+
+/* Merged styles for select and number inputs */
+.option-group select,
+.option-group input[type="number"] {
+    width: 100%;
+    padding: 10px 12px; /* Your original padding */
+    border: 1px solid #cbd5e0; /* Your original border color */
+    border-radius: 5px; /* Your original border-radius */
+    font-size: 1em; /* Your original font-size */
+    color: #4a5568; /* Your original text color */
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #f7fafc; /* Your original background color */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Your original transition */
+}
+
+.option-group select:focus,
+.option-group input[type="number"]:focus {
+    outline: none;
+    border-color: #4299e1; /* Your original focus border color */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25); /* Your original focus shadow */
+}
+
+.option-group select:disabled,
+.option-group input[type="number"]:disabled {
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}
+
+/* Custom arrow for select element (from my previous snippet) */
+.option-group select {
+    appearance: none; /* Remove default arrow on select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234a5568%22%20d%3D%22M287%2C197.3L159.9%2C69.8c-1.9-1.9-4.3-2.9-6.7-2.9c-2.4%2C0-4.8%2C1-6.7%2C2.9L5.4%2C197.3c-3.6%2C3.6-3.6%2C9.4%2C0%2C13s9.4%2C3.6%2C13%2C0l145-145.1l145%2C145.1c3.6%2C3.6%2C9.4%2C3.6%2C13%2C0C290.6%2C206.7%2C290.6%2C200.9%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Changed fill to match your text color #4a5568 */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    padding-right: 30px; /* Make space for the custom arrow */
+}
+
+
+/* Your existing resize-inputs, if you re-introduce this structure: */
+.resize-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    /* Note: If you keep individual .option-group for width/height, this block might not be used directly */
+}
+
+.resize-inputs input {
+    flex: 1;
+    text-align: center;
+}
+
+.resize-inputs span {
+    font-weight: bold;
+    color: #4a5568;
+}
+
+
+/* Your existing checkbox group, now with specific checkbox input styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Your original gap */
+    margin-top: 10px; /* Your original margin */
+    width: 100%;
+    justify-content: center; /* Your original justification */
+    /* Adjust padding/margins if needed for alignment within the container */
+    padding: 0 5px; /* Small padding to align with other inputs */
+    box-sizing: border-box;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto; /* Override general input width */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+    transform: scale(1.2); /* Make checkbox slightly larger */
+    height: 18px; /* Added specific size */
+    width: 18px; /* Added specific size */
+    accent-color: #4299e1; /* Use your blue for checked state */
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin from general label style */
+    font-weight: normal; /* Less bold than section labels */
+    color: #2d3748; /* Use your original label color */
+}
+
+.resize-hint { /* Your existing class for the hint text */
+    font-size: 0.85em;
+    color: #718096; /* Your original color */
+    margin-left: 10px; /* To give space from checkbox label */
+    flex-grow: 1;
+}
+
+/* Convert button styling - merged with your original colors */
+.convert-button {
+    background-color: #4299e1; /* Your original blue button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.convert-button:hover:not(:disabled) {
+    background-color: #2b6cb0; /* Your darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added from my snippet */
+}
+
+.convert-button:disabled {
+    background-color: #90cdf4; /* Your lighter blue when disabled */
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* NOTE: The .job-status-area and related styles were removed from here
+   as they are typically placed in a more global stylesheet (like App.css)
+   since they are rendered by App.tsx, not ConversionOptions.tsx.
+   Ensure these styles are in App.css or your main CSS file. */
+
+   /* Add these rules to your EXISTING frontend/src/components/ConversionOptions.css file */
+
+.conversion-options-container {
+    /* Optional: Add some padding/margin around the whole options section */
+    /* If you already have styling for this, merge these properties carefully */
+    padding: 20px;
+    /* border: 1px solid #ddd; */ /* Optional: for visual separation */
+    /* border-radius: 8px; */ /* Optional */
+    /* background-color: #f9f9f9; */ /* Optional */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Adds space below each input group */
+    display: flex;
+    flex-direction: column; /* Stacks label above input */
+    align-items: flex-start; /* Aligns content to the left */
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Specific styling for different input types */
+.select-input,
+.text-input,
+.slider-input {
+    width: 100%; /* Make inputs take full width of their container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 16px;
+}
+
+.slider-input {
+    -webkit-appearance: none; /* Override default slider appearance */
+    appearance: none;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider-input:hover {
+    opacity: 1;
+}
+
+.slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff; /* Blue thumb */
+    cursor: pointer;
+}
+
+.slider-input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+.slider-value {
+    margin-top: 5px; /* Space below slider */
+    display: block; /* Ensures it's on its own line */
+    text-align: right; /* Aligns percentage to the right */
+    font-size: 0.9em;
+    color: #666;
+}
+
+.checkbox-group {
+    flex-direction: row; /* Keep checkbox and label inline */
+    align-items: center; /* Vertically align checkbox and label */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+    transform: scale(1.2); /* Make checkbox slightly larger */
+}
+
+.convert-button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width */
+}
+
+.convert-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.convert-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
