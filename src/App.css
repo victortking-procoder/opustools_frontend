@@ -1,7 +1,6 @@
 /* frontend/src/App.css */
 
 /* Global Variables (confirm these are only in index.css for single source of truth) */
-/*
 :root {
   --primary-blue: #3498db;
   --primary-green: #2ecc71;
@@ -12,7 +11,6 @@
   --border-color: #e0e6ed;
   --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
-*/
 
 /* Basic App Layout - now applied by Layout.tsx */
 .App {
@@ -227,13 +225,126 @@
 
 /* App-footer is now handled by Layout.tsx */
 .App-footer {
-  margin-top: 40px; /* More space */
-  padding: 20px;
-  background-color: var(--dark-text); /* Darker footer */
-  color: var(--light-text);
-  font-size: 0.95em;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: auto; /* Push footer to the bottom */
+  padding: 2rem 1rem;
+  background-color: #1a202c; /* Dark background color */
+  color: #a0aec0; /* Light gray text */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
 }
+
+.footer-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copyright-text {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-link {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .footer-container {
+    flex-direction: row;
+  }
+
+  .copyright-text {
+    text-align: left;
+  }
+
+  .footer-nav {
+    flex-direction: row;
+  }
+}
+
+/* New styles for Privacy and T&C pages */
+.policy-page {
+  padding: 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  background-color: #1a202c;
+  color: #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-light);
+  text-align: left;
+}
+
+.policy-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  border-bottom: 2px solid #a0aec0;
+  padding-bottom: 0.5rem;
+}
+
+.policy-date {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: #cbd5e0;
+}
+
+.policy-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.policy-paragraph {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #cbd5e0;
+}
+
+.policy-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #cbd5e0;
+}
+
+.policy-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.policy-note {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #2d3748;
+  border-left: 4px solid #4a5568;
+  border-radius: 0.25rem;
+  font-style: italic;
+  color: #e2e8f0;
+}
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
