@@ -105,7 +105,7 @@ const ImageToolPage: React.FC = () => {
     setErrorMessage(null);
 
     const formData = new FormData();
-    formData.append('file', selectedFile);
+    formData.append('uploaded_file', selectedFile);
     formData.append('tool_type', toolType);
     if (toolType === 'image_compressor') {
       formData.append('quality', quality.toString());
